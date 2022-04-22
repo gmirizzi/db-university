@@ -1,17 +1,17 @@
 1. SELECT * FROM `students` INNER JOIN `degrees` ON degrees.id = students.degree_id WHERE degrees.name='Corso di Laurea in Economia';
 2. SELECT * FROM `degrees` INNER JOIN `departments` ON departments.id= degrees.department_id WHERE departments.name = 'Dipartimento di Neuroscienze';
 3. SELECT * FROM `courses` INNER JOIN course_teacher ON course_teacher.course_id=courses.id WHERE course_teacher.teacher_id=44;
-4. SELECT * FROM `students` RIGHT JOIN `degrees` ON degrees.id=students.degree_id LEFT JOIN `departments` on departments.id=degrees.department_id ORDER BY students.surname, students.name;
+4. SELECT * FROM `students` LEFT JOIN `degrees` ON degrees.id=students.degree_id LEFT JOIN `departments` on departments.id=degrees.department_id ORDER BY students.surname, students.name;
 5. SELECT * FROM `degrees` LEFT JOIN `courses` ON courses.degree_id=degrees.id LEFT JOIN `course_teacher` ON course_teacher.course_id= courses.id LEFT JOIN `teachers` ON teachers.id=course_teacher.teacher_id;
 6. SELECT teachers.id, teachers.name, teachers.surname, teachers.phone, teachers.email, teachers.office_address, teachers.office_number
     FROM `teachers`
-    LEFT JOIN `course_teacher`
+    RIGHT JOIN `course_teacher`
         ON course_teacher.teacher_id=teachers.id
-        LEFT JOIN `courses`
+        RIGHT JOIN `courses`
             ON courses.id=course_teacher.course_id
-            LEFT JOIN `degrees`
+            RIGHT JOIN `degrees`
                 ON degrees.id = courses.degree_id
-                LEFT JOIN `departments`
+                RIGHT JOIN `departments`
                 ON departments.id=degrees.department_id
     WHERE departments.name='Dipartimento di Matematica';
 7. SELECT students.id, exam_student.exam_id, count(*) FROM `exam_student` RIGHT JOIN `students` ON students.id = exam_student.student_id GROUP BY students.id, exam_student.exam_id;
