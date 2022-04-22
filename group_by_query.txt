@@ -1,0 +1,1 @@
+SELECT year(enrolment_date) as `enrolment_year`, count(*) as `n` FROM `students` GROUP BY year(`enrolment_date`);
