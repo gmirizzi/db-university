@@ -2,3 +2,4 @@ SELECT * FROM `students` INNER JOIN `degrees` ON degrees.id = students.degree_id
 SELECT * FROM `degrees` INNER JOIN `departments` ON departments.id= degrees.department_id WHERE departments.name = 'Dipartimento di Neuroscienze';
 SELECT * FROM `courses` INNER JOIN course_teacher ON course_teacher.course_id=courses.id WHERE course_teacher.teacher_id=44;
 SELECT * FROM `students` LEFT JOIN `degrees` ON degrees.id=students.degree_id LEFT JOIN `departments` on departments.id=degrees.department_id ORDER BY students.surname, students.name;
+SELECT * FROM `degrees` LEFT JOIN `courses` ON courses.degree_id=degrees.id LEFT JOIN `course_teacher` ON course_teacher.course_id= courses.id LEFT JOIN `teachers` ON teachers.id=course_teacher.teacher_id;
