@@ -1,0 +1,4 @@
+SELECT year(enrolment_date) as `enrolment_year`, count(*) as `n` FROM `students` GROUP BY year(`enrolment_date`);
+SELECT office_address, count(*) FROM `teachers` GROUP BY office_address;
+SELECT exam_id as 'Appello', AVG(vote) as 'Voto medio' FROM `exam_student` GROUP BY exam_id;
+SELECT department_id as 'Dipartimento', count(*) as 'Nr. Corsi di Laurea' FROM `degrees` GROUP BY `department_id`
