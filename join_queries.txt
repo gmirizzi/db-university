@@ -1,2 +1,3 @@
 SELECT * FROM `students` INNER JOIN `degrees` ON degrees.id = students.degree_id WHERE degrees.name='Corso di Laurea in Economia';
 SELECT * FROM `degrees` INNER JOIN `departments` ON departments.id= degrees.department_id WHERE departments.name = 'Dipartimento di Neuroscienze';
+SELECT * FROM `courses` INNER JOIN course_teacher ON course_teacher.course_id=courses.id WHERE course_teacher.teacher_id=44;
