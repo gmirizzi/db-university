@@ -14,3 +14,4 @@
                 RIGHT JOIN `departments`
                 ON departments.id=degrees.department_id
     WHERE departments.name='Dipartimento di Matematica';
+7. SELECT students.id, exam_student.exam_id, count(*) FROM `exam_student` RIGHT JOIN `students` ON students.id = exam_student.student_id GROUP BY students.id, exam_student.exam_id;
